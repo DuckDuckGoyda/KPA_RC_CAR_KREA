@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A simple car (cabin, body, two wheels) inside the 66dp safe zone of a 108dp adaptive icon. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path android:fillColor="#FFFFFF" android:pathData="M40,46 L48,38 L62,38 L70,46 Z" />
+    <path android:fillColor="#FFFFFF" android:pathData="M30,46 L78,46 Q82,46 82,50 L82,62 L26,62 L26,50 Q26,46 30,46 Z" />
+    <path android:fillColor="#FFC107" android:pathData="M31,62 a7,7 0 1,0 14,0 a7,7 0 1,0 -14,0 Z" />
+    <path android:fillColor="#FFC107" android:pathData="M63,62 a7,7 0 1,0 14,0 a7,7 0 1,0 -14,0 Z" />
+</vector>

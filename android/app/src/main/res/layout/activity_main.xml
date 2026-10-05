@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- keepScreenOn: the Bluetooth server only runs while this screen is visible. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Starting…"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <RadioGroup
+        android:id="@+id/modeGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checkedButton="@+id/modeCar"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/modeCar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fake car" />
+
+        <RadioButton
+            android:id="@+id/modeEcho"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Echo" />
+
+        <RadioButton
+            android:id="@+id/modeSniff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sniff" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reply delay:" />
+
+        <RadioGroup
+            android:id="@+id/delayGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkedButton="@+id/delay0"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/delay0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0" />
+
+            <RadioButton
+                android:id="@+id/delay100"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100" />
+
+            <RadioButton
+                android:id="@+id/delay300"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="300 ms" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/dropReplies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Drop replies" />
+
+        <CheckBox
+            android:id="@+id/corruptCrc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Corrupt reply CRC" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFF1F1F1"
+        android:fontFamily="monospace"
+        android:padding="6dp"
+        android:textColor="#000000"
+        android:textSize="15sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/hexInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="monospace"
+            android:hint="AC 53 04 00 01 00 CA"
+            android:importantForAutofill="no"
+            android:inputType="textCapCharacters|textNoSuggestions"
+            android:singleLine="true"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clear log" />
+
+        <Button
+            android:id="@+id/btSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bluetooth settings" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/log"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@null"
+        android:stackFromBottom="true"
+        android:transcriptMode="normal" />
+</LinearLayout>

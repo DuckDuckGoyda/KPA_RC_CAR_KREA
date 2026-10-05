@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rc-controller"
+dynamic = ["version"]
+description = "Пульт управления RC-машинкой по UART (USB или Bluetooth HC-05)"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["PyQt6>=6.5", "pyserial>=3.5"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-qt>=4.4", "ruff>=0.5", "pyinstaller>=6.3"]
+
+[project.gui-scripts]
+rc-controller = "rc_controller.app:main"
+
+[tool.setuptools.dynamic]
+version = { attr = "rc_controller.__version__" }
+
+[tool.setuptools.packages.find]
+include = ["rc_controller*"]
+
+[tool.setuptools.package-data]
+rc_controller = ["resources/**/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+qt_api = "pyqt6"
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["E501"]
